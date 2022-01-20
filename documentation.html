@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/planStyle.css">
+    <title>Match Rush! Documentation</title>
+</head>
+
+<body>
+    <div id="links">
+        <a href="about.html">About This Project</a>
+        <a href="index.html">Back to the Game</a>
+    </div>
+    <h1> Match Rush! Documentation</h1>
+    <div id="process">
+        <h3>The Development Process</h3>
+        <hr>
+        <p>
+            My original plan for this project was to make a sort of tug-of-war game versus an AI that utilized a match-3
+            mechanic. This idea was inspired by an old fanmade arcade game mode I used to play a lot in the game known
+            as Starcraft, where matching items in a grid spawns troops that would attack the enemy base.
+        </p>
+        <p>
+            When I first began developing this game, my first goal was to get the grid and shapes spawning correctly.
+            This first step was not difficult, as I formatted my code similar to how in-class exercises formatted it,
+            which I found to be convenient and easy to read. The part that took me the longest here was creating shapes
+            with more than 4 sides, such as the pentagon and hexagon, as PIXI does not have a function to create these,
+            so I had to make my own.
+        </p>
+        <p>
+            Once I had everything displaying properly, my next task was to create my grid, a 2D array (array of
+            columns). Each shape object contains a reference to their adjacent shapes, and every time a match is made,
+            new shapes would be created at the beginning of each column in the grid. This part took a lot of work, as it
+            took a bit to get the shapes' adjacent references to update correctly after each match.
+        </p>
+        <p>
+            When it comes to making the shapes fall, I utilized simple vector physics. Each shape would only react to
+            physics, however, after a successful match was made, and each shape would stop falling when colliding with
+            the one below them. Looking back at it, I believe there is a much more reliable way to make the falling
+            mechanic work better. Each shape has their x and y position, but they also have 2 other variables called
+            gridX and gridY, which determine the location of the grid space assigned to them. I should have made it so
+            shapes would fall into their assigned grid positions rather than have them check their collision with other
+            shapes, which can be less reliable. It certainly would have saved me a bit of time, the collision mechanics
+            tended to get in my way a lot when I was developing the player's dragging interaction with the shapes.
+        </p>
+        <p>
+            Developing the match checking and potential match checking algorithms were where I had the most fun doing
+            this project. These functions required a lot of if statements, as one can imagine, so I spent a lot of time
+            thinking about how best to reduce the amout of statements necessary to get the job done. The feeling of
+            getting these two functions to work 100% properly felt amazing, especially considering that I didn't spand
+            very long on these compared to previous developments.
+        </p>
+        <p>
+            Unfortunately, nearing the end of the project, I had to cut the troop spawning mechanic and settled with the
+            goal of getting as high of a score as possible before running out of moves. In the future, however, I really
+            want to implement this idea, as I believe it could make for a very fun interactive gameplay aspect.
+        </p>
+    </div>
+
+    <div id="requirements">
+        <h3>Project Requirements Outline</h3>
+        <hr>
+        <p>
+            This project does not use any sprite images. I drew everything using the GPU. The game is 100% functional,
+            there were a total of 9 classes created and used (7 of them being particular shape types that inherited from
+            my parent Shape class). I believe the game's design is pleasing, as the gameplay is set to one side o the
+            screen while the feedback is set to the other side (score and game over text).
+        </p>
+        <p>
+            My personal favorite aspect of the design, however, is the audio. I created all the original sound effects
+            using a Digital Audio Workstation (DAW) called FL Studio. It has a lot of useful features for creating and
+            recording sounds, music, etc.
+
+            NOTE: I have unique sounds for pretty much everything, including up to 7 different sound effects for
+            collateral matches, and sounds for 4-matches and 5-matches!
+        </p>
+        <p>
+            Concerning code conventions, there is no redundancy in my code that hasn't been put into a separate
+            function. Everything is commented, so there should be no problems traversing through it.
+        </p>
+
+    </div>
+    <div id="sources">
+        <h3>Sources</h3>
+        <hr>
+        <p>
+            The only resources I used were coding help sources such as:
+            <ul>
+                <li><a href="https://pixijs.download/dev/docs/index.html">the PIXI.js documentation</a></li>
+                <li><a href="https://www.w3schools.com/js/">The W3Schools.com Javascript documentation and tutorial series</a></li>
+                <li>Tutorial videos on MyCourses</li>
+                <li><a href="https://free-game-assets.itch.io/free-castle-2d-game-objects">2D Castle Game Assets (Though these were never used)</a></li>
+            </ul>
+        </p>
+    </div>
+</body>
+
+</html>

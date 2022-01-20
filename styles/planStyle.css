@@ -1,0 +1,31 @@
+a:link { color: lightblue; }
+a:visited { color: rgb(175, 183, 185); }
+a:focus { color: rgb(11, 172, 226); }
+a:hover { color: rgb(118, 218, 252); }
+a:active { color: rgb(84, 155, 179); }
+
+html {
+    background-color: rgb(253, 127, 119);
+    color: white;
+}
+body {
+    margin: 0 200px;
+    padding: 100px 200px;
+    background-color: black;
+}
+h1 {
+    text-align: center;
+}
+#links {
+    padding-bottom: 50px;
+    display: flex;
+    font-size: 30px;
+    justify-content: space-around;
+}
+img {
+    max-width: 100%;
+}
+p {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
